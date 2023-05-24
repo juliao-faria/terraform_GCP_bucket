@@ -1,5 +1,5 @@
-resource "google_storage_bucket" "GCS" {
-  name = "bucket-from-terraform"
+resource "google_storage_bucket" "bucket-from-simpledev" {
+  name = "bucket-from-terraform-simpledev"
   location = "us-central1"
   storage_class = "STANDARD"
   labels = {
@@ -11,6 +11,6 @@ resource "google_storage_bucket" "GCS" {
 
 resource "google_storage_bucket_object" "photo" {
   name = "random_photo"
-  bucket  = google_storage_bucket.GCS1.name
+  bucket  = google_storage_bucket.bucket-from-simpledev.name
   source ="calendario.png"
 }
